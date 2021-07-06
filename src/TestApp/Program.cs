@@ -81,7 +81,7 @@ namespace TestApp
                 }
                 else if (cmd == "unsub")
                 {
-                    client.Unsubscribe("BTCUSD.SPOT", new double[] {1, 2}).Wait();
+                    client.Unsubscribe("BTCUSD.SPOT").Wait();
                 }
                 else
                 {
