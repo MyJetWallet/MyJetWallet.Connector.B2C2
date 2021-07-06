@@ -75,6 +75,14 @@ namespace TestApp
 
                     client.Reset("BTCUSD.SPOT", new double[] {1, 2}).Wait();
                 }
+                else if (cmd == "sub")
+                {
+                    client.Subscribe("BTCUSD.SPOT", new double[] {1, 2}).Wait();
+                }
+                else if (cmd == "unsub")
+                {
+                    client.Unsubscribe("BTCUSD.SPOT", new double[] {1, 2}).Wait();
+                }
                 else
                 {
                     var orderBook = client.GetOrderBookById(cmd);

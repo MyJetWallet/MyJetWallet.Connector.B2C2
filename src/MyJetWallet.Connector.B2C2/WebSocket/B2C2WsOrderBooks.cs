@@ -82,6 +82,24 @@ namespace MyJetWallet.Connector.B2C2.WebSocket
             await webSocket.SubscribeChannel(market, levels);
         }
 
+        public async Task Subscribe(string market, double[] levels)
+        {
+            var webSocket = _engine.GetClientWebSocket();
+            if (webSocket == null)
+                return;
+
+            await webSocket.SubscribeChannel(market, levels);
+        }
+
+        public async Task Unsubscribe(string market, double[] levels)
+        {
+            var webSocket = _engine.GetClientWebSocket();
+            if (webSocket == null)
+                return;
+
+            await webSocket.UnSubscribeChannel(market);
+        }
+
         private async Task Connect(ClientWebSocket webSocket)
         {
             lock (_sync)
