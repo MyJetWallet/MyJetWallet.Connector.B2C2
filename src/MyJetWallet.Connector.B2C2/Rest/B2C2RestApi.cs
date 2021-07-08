@@ -91,7 +91,7 @@ namespace MyJetWallet.Connector.B2C2.Rest
                 $"\"instrument\": \"{instrument}\"," +
                 "\"order_type\": \"MKT\"," +
                 $"\"side\": \"{side}\"," +
-                $"\"valid_until\": \"{DateTime.Now.AddMinutes(5):yyyy-MM-ddTHH:mm:ss}\"," +
+                $"\"valid_until\": \"{DateTime.Now.ToUniversalTime().AddMinutes(5):yyyy-MM-ddTHH:mm:ss}\"," +
                 $"\"quantity\": \"{quantity}\"}}";
 
             var result = await CallAsync(HttpMethod.Post, apiPath, body);
