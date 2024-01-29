@@ -84,7 +84,7 @@ namespace MyJetWallet.Connector.B2C2.Rest
         public async Task<B2C2Result<Order>> PlaceMarketOrder(string clientOrderId,
             string instrument, OrderSide side, decimal quantity)
         {
-            var apiPath = "order/";
+            var apiPath = "v2/order/";
 
             var body =
                 $"{{\"client_order_id\": \"{clientOrderId}\"," +
